@@ -2,6 +2,8 @@ import 'package:flutter/material.dart'; // 导入了Material UI组件库
 //导入cupertino  widget 库
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:hello_world/scrolnotification.dart';
+import 'scollcontroller.dart';
 
 import 'scroll.dart';
 
@@ -370,7 +372,9 @@ class TipRoute extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  SingleChildScrollViewTestRoute(),
+                                  /*SingleChildScrollViewTestRoute(),*/
+                              /*ScrollControllerTestRoute(),*/
+                              ScrollNotificationTestRoute(),
                             ))
                       },
                   child: const Text(
