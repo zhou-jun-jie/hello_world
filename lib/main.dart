@@ -2,6 +2,7 @@ import 'package:flutter/material.dart'; // 导入了Material UI组件库
 //导入cupertino  widget 库
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:hello_world/grid.dart';
 import 'package:hello_world/scrolnotification.dart';
 import 'scollcontroller.dart';
 
@@ -374,7 +375,8 @@ class TipRoute extends StatelessWidget {
                               builder: (context) =>
                                   /*SingleChildScrollViewTestRoute(),*/
                               /*ScrollControllerTestRoute(),*/
-                              ScrollNotificationTestRoute(),
+                              /*ScrollNotificationTestRoute(),*/
+                              GridViewRoute(),
                             ))
                       },
                   child: const Text(
