@@ -2,6 +2,9 @@ import 'package:flutter/material.dart'; // 导入了Material UI组件库
 //导入cupertino  widget 库
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:hello_world/Pointer.dart';
+import 'package:hello_world/drag.dart';
+import 'package:hello_world/gesture.dart';
 import 'package:hello_world/grid.dart';
 import 'package:hello_world/scrolnotification.dart';
 import 'scollcontroller.dart';
@@ -304,30 +307,30 @@ class TipRoute extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Text(
-                text * 10,
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textScaleFactor: 2.0,
-              ),
-              ElevatedButton(
-                  onPressed: () => Navigator.pop(context, "我是返回值"),
-                  child: const Text("返回")),
-              const Text.rich(TextSpan(children: [
-                TextSpan(text: "Baidu:"),
-                TextSpan(
-                    text: "https://www.baidu.com",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontFamily: 'Raleway',
-
-                      // fontStyle: FontStyle.italic
-                      // fontFamily: 'Raleway',
-                      // package: 'awesome_package',
-                    ))
-              ])),
+              // Text(
+              //   text * 10,
+              //   textAlign: TextAlign.center,
+              //   maxLines: 1,
+              //   overflow: TextOverflow.ellipsis,
+              //   textScaleFactor: 2.0,
+              // ),
               // ElevatedButton(
+              //     onPressed: () => Navigator.pop(context, "我是返回值"),
+              //     child: const Text("返回")),
+              // const Text.rich(TextSpan(children: [
+              //   TextSpan(text: "Baidu:"),
+              //   TextSpan(
+              //       text: "https://www.baidu.com",
+              //       style: TextStyle(
+              //         color: Colors.blue,
+              //         fontFamily: 'Raleway',
+              //
+              //         // fontStyle: FontStyle.italic
+              //         // fontFamily: 'Raleway',
+              //         // package: 'awesome_package',
+              //       ))
+              // ])),
+              // // ElevatedButton(
               //     onPressed: () => {}, child: const Text("ElevatedButton")),
               // ElevatedButton.icon(
               //     onPressed: null,
@@ -340,48 +343,56 @@ class TipRoute extends StatelessWidget {
               //     onPressed: () => {}, icon: const Icon(Icons.thumb_down)),
 
               /// 本地图片
-              const Image(
-                image: AssetImage("images/avatar.png"),
-                width: 100.0,
-              ),
-              Image.network(
+              // const Image(
+              //   image: AssetImage("images/avatar.png"),
+              //   width: 100.0,
+              // ),
+              /*Image.network(
                 "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",
                 width: 100.0,
                 color: Colors.blue,
                 colorBlendMode: BlendMode.difference,
                 repeat: ImageRepeat.repeatY,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.accessible, color: Colors.green),
-                  Icon(Icons.error, color: Colors.green),
-                  Icon(Icons.fingerprint, color: Colors.green),
-                ],
-              ),
-              const SwitchAnaCheckBoxTestRoute(),
+              ),*/
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: const [
+              //     Icon(Icons.accessible, color: Colors.green),
+              //     Icon(Icons.error, color: Colors.green),
+              //     Icon(Icons.fingerprint, color: Colors.green),
+              //   ],
+              // ),
+              // const SwitchAnaCheckBoxTestRoute(),
               /*// 焦点
               const FocusTestRoute()*/
               // Form && FormField
               // 表单
               // const FormTestState()
               // Flex
-              FlexLayoutTestRoute(),
-              TextButton(
-                  onPressed: () => {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  /*SingleChildScrollViewTestRoute(),*/
-                              /*ScrollControllerTestRoute(),*/
-                              /*ScrollNotificationTestRoute(),*/
-                              GridViewRoute(),
-                            ))
-                      },
-                  child: const Text(
-                    '跳转Scroll')
-                  ),
+              // FlexLayoutTestRoute(),
+              // TextButton(
+              //     onPressed: () => {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                 builder: (context) =>
+              //                     /*SingleChildScrollViewTestRoute(),*/
+              //                 /*ScrollControllerTestRoute(),*/
+              //                 /*ScrollNotificationTestRoute(),*/
+              //                 GridViewRoute(),
+              //               ))
+              //         },
+              //     child: const Text(
+              //       '跳转Scroll')
+              //     ),
+              // PointerWidget(),
+              // GestureWidget(),
+              ElevatedButton(
+                  onPressed: () =>
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+                        return DragWidgetRoute();
+                      })),
+                  child: Text('拖动'))
             ],
           ),
         ),
